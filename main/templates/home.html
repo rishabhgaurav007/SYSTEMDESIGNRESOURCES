@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block page_content %}
+    <div>
+        <h1>List</h1>
+        <hr>
+        <h2>Design Theory</h2>
+        {% for key,value in theory.items %}
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+            <a href="{% url 'resource_requested' key %}">{{ key|add:"-17" }}  {{ value }} </a>
+            <span class="badge badge-primary badge-pill">{{ key|add:"96" }}</span>
+            </li>
+        {% endfor %}
+        <hr>
+        <h2>Design Problems</h2>
+        {% for key,value in posts.items %}
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+            <a href="{% url 'resource_requested' key|add:"-1" %}">{{ key }}  {{ value }} </a>
+            <span class="badge badge-primary badge-pill">{{ key|add:"96" }}</span>
+            </li>
+        {% endfor %}
+        <hr>
+    </div>
+
+
+
+
+{% endblock %}
+
